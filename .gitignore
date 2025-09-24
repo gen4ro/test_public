@@ -1,0 +1,78 @@
+# ====================================================
+# Project-specific ignores
+# ====================================================
+
+# Raw experimental data (large, private, not tracked)
+rawdata/
+
+# Processed data (ignore until publication)
+data/
+
+# Analysis outputs (reproducible, don't version-control)
+output/
+figure/
+log/
+
+# Stan build artifacts (CmdStanR compiled files)
+stan/*.hpp
+stan/*.o
+stan/*.so
+stan/*.exe
+stan/*.dll
+stan/*.dSYM/
+stan/*-diagnostic.csv
+stan/*-output.csv
+
+# ====================================================
+# R-related ignores
+# ====================================================
+
+# R session files
+.Rhistory
+.RData
+.Ruserdata
+
+# RStudio project files
+.Rproj.user/
+*.Rproj
+
+# renv cache (if using renv for package mgmt)
+renv/library/
+renv/staging/
+
+# ====================================================
+# Python-related ignores (optional, if using python)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# ====================================================
+# OS / Editor junk
+# ====================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ====================================================
+# Logs / temp
+# ====================================================
+*.log
+*.tmp
+*.swp
