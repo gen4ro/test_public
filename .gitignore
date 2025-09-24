@@ -2,6 +2,10 @@
 # Project-specific ignores
 # ====================================================
 
+
+# Raw experimental data (large, private, not tracked)
+rawdata/
+
 # Processed data (ignore until publication)
 # data/
 
