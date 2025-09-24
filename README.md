@@ -1,101 +1,60 @@
-# GAS Lab Analysis Template
+# GAS Lab Public Repo Template
 
-This is the **standard analysis folder template of the Laboratory for Hibernation Biology, RIKEN BDR**. It provides a unified structure for reproducible data analysis and collaborative work under Git version control.
-
-これは、**理研BDR 冬眠生物学研究室の標準解析フォルダテンプレート**です。再現性のあるデータ解析とラボ内での解析共有・協働を目的とした統一的な構造を提供します。
-
-*(This file is written in Markdown. You can view it nicely formatted in GitHub, VS Code, or RStudio. In other editors, it is readable as plain text.)*
+This repository provides example materials and analysis code shared publicly by  
+the Laboratory for Hibernation Biology (GAS Lab), RIKEN BDR.  
+It serves as a template for structuring, documenting, and releasing research code.
 
 ------------------------------------------------------------------------
 
-**Date:** 2025-08-23\
-**Maintainer:** Genshiro A. Sunagawa\
-**Contact:** [genshiro.sunagawa\@riken.jp](mailto:genshiro.sunagawa@riken.jp){.email}
+**Date:** 2025-09-25  
+**Maintainer:** Genshiro A. Sunagawa  
+**Contact:** genshiro.sunagawa@riken.jp
 
 ------------------------------------------------------------------------
 
-## Folder structure
+## Purpose
 
--   **(root)**
-    -   Contains analysis scripts.\
-        Scripts are numbered with two digits from 00 to 99 in execution order.\
-        Typically, `README.md` (this file) and `01_convert_data.R` are fixed.
-    -   Also contains `.gitignore` and project configuration files.
--   **rawdata/**
-    -   Raw experimental data as obtained.
-    -   **Not tracked by Git** (too large/private).
-    -   Structure depends on data acquisition.
--   **data/**
-    -   Processed data converted from `rawdata`, used for analysis.
-    -   **Ignored by Git until publication.**\
-        After publication, finalized datasets can be added to the repository.
-    -   Includes `settings.R`, a shared R script with common routines and settings.
--   **output/**
-    -   Stores outputs other than figures.
-    -   **Not tracked by Git.**
-    -   Organized as:\
-        `output/<script_name>/<datetime>/...`
--   **figure/**
-    -   Stores output figures.
-    -   **Not tracked by Git.**
-    -   Same structure as **output/**.
--   **log/**
-    -   Stores log files.
-    -   **Not tracked by Git.**
-    -   Same structure as **output/**.
--   **stan/**
-    -   Stan model source files (`*.stan`) are tracked.
-    -   Compiled artifacts (`*.hpp`, `*.o`, `*.so`, etc.) are **ignored by Git**.
+Provide a clean, reproducible template for sharing code and analysis used in publications.  
+Researchers can fork this repository as a starting point for their own public releases.
 
 ------------------------------------------------------------------------
 
-## Representative scripts
+## Folder Structure
 
--   `01_convert_data.R` — Convert raw data into analyzable format
--   `nn_fit_model.R` — Fit a Stan model
--   `nn_output_figures.R` — Generate figures from analysis results
-
-------------------------------------------------------------------------
-
-## Notes on Git management
-
--   **Always commit scripts and configuration files** (`*.R`, `*.stan`, `settings.R`, `.gitignore`).
--   **Do not commit rawdata, large outputs, or logs.**
--   If you need to share data, provide a minimal test dataset or point to the storage location.
--   Use clear commit messages that describe **why** changes were made.
+- **(root)/**
+  - `README.md` — detailed project description (can be used as manuscript-specific README)  
+  - `mogemoge/` — example folder for scripts or analysis pipelines  
+  - `.gitignore` — excludes temporary or large files from version control  
+  - `LICENSE` — license information for this repository  
 
 ------------------------------------------------------------------------
 
-## How to reproduce an analysis
+## Usage
 
-1.  Obtain the required `rawdata/` from the shared storage (not included in Git).
-2.  Run `01_convert_data.R` to generate `data/`.
-3.  Run subsequent scripts (`nn_fit_model.R`, `nn_output_figures.R`, etc.) in order.
-4.  Outputs will be created under `output/`, `figure/`, and `log/`.
+1. Clone the repository:
+    ````bash
+    git clone https://github.com/USERNAME/REPOSITORY.git
+    ````
+2. Check dependencies (see individual script headers or requirements files).  
+3. Run scripts as described in `README.md`.  
+
+------------------------------------------------------------------------
+
+## Notes
+
+- Please cite the associated publication when using this code.  
+- Figures and text in associated manuscripts: **CC BY 4.0**  
+- Code in this repository: **MIT License**  
 
 ------------------------------------------------------------------------
 
-## Git workflow rules (Lab standard — *trial operation*)
+## License
 
-> These rules are currently under **trial operation** in our lab.\
-> They may be revised when moving to full-scale operation.
-
--   **Branching**
-    -   Use `main` for stable code
-    -   Create `feature/<topic>` branches for new analyses.
-    -   Use `hotfix/<issue>` for urgent bug fixes.
--   **Commit messages**
-    -   Write clear, short messages in English.
-    -   Example:
-        -   `Add new Stan model for glucose analysis`
-        -   `Fix bug in 01_convert_data.R`
--   **Data policy**
-    -   Do not commit `rawdata/` or `data/` (except small test datasets).
-    -   Use shared lab storage for large/raw data.
--   **Pull / Merge**
-    -   Do not push directly to `main`.
-    -   Use Pull Requests or confirm with the team before merging.
--   **Tags**
-    -   Tag important milestones (e.g., paper submission).
+The source code is released under the terms of the MIT License (see [LICENSE](LICENSE)).  
+Associated manuscripts and figures are distributed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
 
 ------------------------------------------------------------------------
+
+## Version History
+
+- **v1.0 (2025-09-25)** — Initial public release  
