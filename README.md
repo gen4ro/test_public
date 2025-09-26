@@ -35,8 +35,21 @@ Researchers can fork this repository as a starting point for their own public re
     ````bash
     git clone https://github.com/USERNAME/REPOSITORY.git
     ````
-2. Check dependencies (see individual script headers or requirements files).  
-3. Run scripts as described in `README.md`.  
+2. Check dependencies (see individual script headers or requirements files).
+3. Run scripts as described in `README.md`.
+
+### Generating pixel art
+
+The repository includes `pixel_art_generator.py`, a small Python utility that
+produces 128×128 PNG pixel art using randomly selected retro palettes.  Run it
+from the repository root as follows:
+
+````bash
+python pixel_art_generator.py output.png --seed 123
+````
+
+Additional options can be listed with `--help`, allowing you to customise the
+symmetry, palette, and density of the artwork.
 
 ------------------------------------------------------------------------
 
