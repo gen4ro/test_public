@@ -49,7 +49,18 @@ The heart of the template is `01_convert_data.R`.  It performs three jobs:
 Because the script is idempotent you can re-run it whenever new raw data are
 added.  It recreates the CSVs from scratch each time.
 
-### Dependencies
+### Generating pixel art
+
+The repository includes `pixel_art_generator.py`, a small Python utility that
+produces 128×128 PNG pixel art using randomly selected retro palettes.  Run it
+from the repository root as follows:
+
+````bash
+python pixel_art_generator.py output.png --seed 123
+````
+
+Additional options can be listed with `--help`, allowing you to customise the
+symmetry, palette, and density of the artwork.
 
 The script relies on a small number of widely used R packages:
 
